@@ -11,8 +11,6 @@ function add() {
     document.getElementById("score").innerText = score;
 }
 
-
-
 function upgradePerClick() {
     if (score < costPerClick) {
         return;
@@ -38,6 +36,22 @@ function upgradePerSecond() {
         document.getElementById("secondcost").innerText = costPerSecond;
     }
 }
+
+function downgradePerSecond() {
+    perSecond -= 2;
+}
+
+function gameOverCondition() {
+    if (population <= 0) {
+        return "Game Over";
+    } else if (happiness <= 0) {
+        return "Game Over";
+    } else if (environment <= 0) {
+        return "Game Over";
+    } else if (resources <= 0) {
+        return "Game Over";
+    }
+};
 
 setInterval(function() {
     score += perSecond;
